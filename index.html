@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مساعد الياسمين لتنسيق اللجان</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-pattern"></div>
+    
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>
+                    <span class="header-icon">✨</span>
+                    مساعد الياسمين لتنسيق اللجان
+                </h1>
+                <p>حل برمجي متقدم لتسهيل عملية توزيع اللجان وتحسين سير العمل.</p>
+            </div>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitl53UDqJbgEx4haHVYlalEIrAS1epAyKbt3qTRgDG-jSa8Sd9TnxEpiJlmQvT0hIuAQvrMCKE0Xri4EhAiuvAXNxi84rfG-gXoZhjOwppGxQVxwbgmLQMYoOAmM9wJR1Oz42P_pdfrPCVWiHj11K6sB0-5CQRIGa_2QHgKNJrDQB37xV0LkLLZCkhkqA/s320/jasmine-academy-logo.jpeg" alt="شعار أكاديمية الياسمين" class="logo">
+        </div>
+    </header>
+
+    <main>
+        <div class="card phase-card">
+            <div class="card-header">
+                <span class="phase-number">1</span>
+                <h2><i class="fas fa-upload"></i> المرحلة الأولى: إدخال البيانات</h2>
+            </div>
+            <section id="data-input-section">
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="examiners-file">
+                            <i class="fas fa-user-tie"></i>
+                            ملف الممتحنين (CSV)
+                        </label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="examiners-file" accept=".csv">
+                            <div class="file-status" id="examiners-status">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>اختر الملف</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="halaqat-file">
+                            <i class="fas fa-users"></i>
+                            ملف الحلقات (CSV)
+                        </label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="halaqat-file" accept=".csv">
+                            <div class="file-status" id="halaqat-status">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>اختر الملف</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="rooms-file">
+                            <i class="fas fa-door-open"></i>
+                            ملف الغرف (CSV)
+                        </label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="rooms-file" accept=".csv">
+                            <div class="file-status" id="rooms-status">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>اختر الملف</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="process-button" class="process-btn">
+                    <i class="fas fa-cogs"></i>
+                    <span>بدء عملية التوزيع</span>
+                    <div class="btn-loader"></div>
+                </button>
+            </section>
+        </div>
+
+        <div class="card phase-card">
+            <div class="card-header">
+                <span class="phase-number">2</span>
+                <h2><i class="fas fa-chart-bar"></i> المرحلة الثانية: التقارير والمخرجات</h2>
+            </div>
+            <section id="report-section">
+                <div class="report-container" id="foundation-report-placeholder">
+                    <div class="report-header">
+                        <i class="fas fa-info-circle"></i>
+                        <h3>التقرير التأسيسي</h3>
+                    </div>
+                    <pre><!-- سيتم عرض ملخص البيانات هنا --></pre>
+                </div>
+
+                <div class="report-container violation-report" id="violation-report-placeholder">
+                    <div class="report-header">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>تقرير الأخطاء (Violations)</h3>
+                    </div>
+                    <pre><!-- سيتم عرض الأخطاء التي تمنع التوزيع هنا --></pre>
+                </div>
+            </section>
+        </div>
+        
+        <div class="card phase-card">
+            <div class="card-header">
+                <span class="phase-number">3</span>
+                <h2><i class="fas fa-table"></i> الجدول النهائي</h2>
+            </div>
+            <section id="final-schedule-container">
+                <div class="section-header">
+                    <button id="copy-button" class="copy-btn">
+                        <i class="fas fa-copy"></i>
+                        <span>نسخ الجدول</span>
+                    </button>
+                </div>
+                <div id="final-schedule-placeholder"><!-- سيتم عرض الجدول النهائي هنا --></div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 أكاديمية الياسمين - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // File upload visual feedback
+        document.querySelectorAll('input[type="file"]').forEach(input => {
+            input.addEventListener('change', function() {
+                const statusId = this.id.replace('-file', '-status');
+                const statusEl = document.getElementById(statusId);
+                if (this.files[0]) {
+                    statusEl.innerHTML = `<i class="fas fa-check-circle"></i><span>${this.files[0].name}</span>`;
+                    statusEl.classList.add('file-selected');
+                } else {
+                    statusEl.innerHTML = `<i class="fas fa-cloud-upload-alt"></i><span>اختر الملف</span>`;
+                    statusEl.classList.remove('file-selected');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
