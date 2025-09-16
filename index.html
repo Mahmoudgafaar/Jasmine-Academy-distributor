@@ -77,6 +77,28 @@
                     </div>
                 </div>
                 
+                <div class="advanced-settings">
+                    <h3 class="settings-title"><i class="fas fa-sliders-h"></i> الإعدادات المتقدمة</h3>
+                    <div class="settings-grid">
+                        <div class="input-group">
+                            <label for="max-students-per-examiner">
+                                <i class="fas fa-user-friends"></i>
+                                الحد الأقصى للطلاب لكل ممتحن
+                            </label>
+                            <input type="number" id="max-students-per-examiner" class="settings-input" value="50">
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-clock"></i> فترات الاختبار</label>
+                            <div id="shifts-container">
+                                <!-- Shift slots will be dynamically added here -->
+                            </div>
+                            <button id="add-shift-button" class="add-btn">
+                                <i class="fas fa-plus"></i> إضافة فترة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <button id="process-button" class="process-btn">
                     <i class="fas fa-cogs"></i>
                     <span>بدء عملية التوزيع</span>
@@ -130,6 +152,7 @@
         <p>© 2025 أكاديمية الياسمين - جميع الحقوق محفوظة</p>
     </footer>
 
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
     <script src="main.js"></script>
     <script>
         // File upload visual feedback
